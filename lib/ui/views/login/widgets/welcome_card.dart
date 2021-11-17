@@ -229,7 +229,7 @@ class _WelcomeBoxState extends State<WelcomeBox> with TickerProviderStateMixin{
                         borderRadius: BorderRadius.circular(4)
                     ),
                     child: Text(
-                      'Continue',
+                      'Start',
                       style: AppTextStyles.label,
                     ),
                   ),
