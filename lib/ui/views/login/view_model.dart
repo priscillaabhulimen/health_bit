@@ -18,29 +18,10 @@ class LoginViewModel extends BaseViewModel{
     notifyListeners();
   }
 
-  // bool _isLoading = true;
-  // bool get isChecking => _isLoading;
-  //
-  // set isLoading(bool val) {
-  //   _isLoading = val;
-  //   notifyListeners();
-  // }
-
-  bool _isLogin = false;
-  bool get isLogin => _isLogin;
-
-  set isLogin(bool val) {
-    _isLogin = val;
-    notifyListeners();
-  }
-
   void init() async{
     WidgetsBinding.instance.addPostFrameCallback((_) async{
       Future.delayed(Duration(milliseconds: 1500), (){
         isWelcome = true;
-        Future.delayed(Duration(milliseconds: 800), (){
-          isLogin = true;
-        });
       });
     });
   }

@@ -42,5 +42,6 @@ class AppColors {
   static const Color mainTeal = Color(0xFF205C5C);
   static const Color secondaryTeal = Color(0xFF136F63);
   static const Color lightTeal = Color(0xFF73D4D5);
-  static const Color mainWhite= Color(0xFFEDFAFA);
+  static const Color lighterTeal = Color(0xFFB7F5F5);
+  static const Color mainWhite= Color(0xFFFFFFFE);
 }
