@@ -5,6 +5,7 @@ import 'package:health_bit/ui/base/base_view.dart';
 import 'package:health_bit/ui/views/login/view_model.dart';
 import 'package:health_bit/ui/views/login/widgets/welcome_card.dart';
 import 'package:health_bit/values/images.dart';
+import 'package:health_bit/widgets/confirm_back_tap.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key key}) : super(key: key);
@@ -22,10 +23,13 @@ class _LoginViewState extends State<LoginView> {
       builder: (context, model, _){
         return Scaffold(
           backgroundColor: AppColors.mainWhite,
-          body: Stack(
-            children: [
-              model.isWelcome ? WelcomeBox() : SizedBox(),
-            ],
+          body: ConfirmBackTap(
+            message: 'Press back again to exit',
+            child: Stack(
+              children: [
+                model.isWelcome ? WelcomeBox() : SizedBox(),
+              ],
+            ),
           ),
         );
       },

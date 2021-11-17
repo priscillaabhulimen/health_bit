@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:health_bit/router.dart';
 import 'package:health_bit/styles/colors.dart';
 import 'package:health_bit/styles/textstyles.dart';
+import 'package:health_bit/ui/views/main_page/main_page.dart';
 import 'package:health_bit/ui/views/splash_screen/splash_screen.dart';
 import 'package:health_bit/utils/health_bit_page_route.dart';
 import 'package:health_bit/values/images.dart';
@@ -215,8 +216,11 @@ class _WelcomeBoxState extends State<WelcomeBox> with TickerProviderStateMixin{
                     animController.reverse();
                     cont.reverse();
                     controller.reverse();
-                    Future.delayed(Duration(milliseconds: 800), (){
-                      Navigator.pop(context);
+                    Future.delayed(Duration(milliseconds: 500), (){
+                      Navigator.push(
+                          context,
+                          HealthBitPageRoute.slideAnimateTo(MainPage())
+                      );
                     });
                   },
                   child: Container(
@@ -229,7 +233,7 @@ class _WelcomeBoxState extends State<WelcomeBox> with TickerProviderStateMixin{
                         borderRadius: BorderRadius.circular(4)
                     ),
                     child: Text(
-                      'Start',
+                      'Start App',
                       style: AppTextStyles.label,
                     ),
                   ),

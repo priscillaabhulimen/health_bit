@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.abhulimen.priscilla.health_bit.health_bit">
    <application
-        android:label="health_bit"
+        android:label="Health Bit"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
