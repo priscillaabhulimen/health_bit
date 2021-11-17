@@ -23,7 +23,7 @@ class AppStartupViewModel extends BaseViewModel {
 
       Navigator.push(
         _appContext,
-        HealthBitPageRoute.animateTo(LoginView())
+        HealthBitPageRoute.bounceAnimateTo(LoginView())
       );
 
     });

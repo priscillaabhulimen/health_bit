@@ -7,7 +7,7 @@ class AppTextStyles {
 
   static TextStyle get cardLabel {
     return TextStyle(
-      fontSize: 17,
+      fontSize: 13.5,
       fontWeight: FontWeight.w500,
       color: AppColors.mainWhite
     );
@@ -31,15 +31,23 @@ class AppTextStyles {
   static TextStyle get cta {
     return TextStyle(
       fontSize: 16,
-      fontWeight: FontWeight.w500,
-      color: Colors.black,
+      color: AppColors.mainBlack,
     );
   }
 
   static TextStyle get label {
     return TextStyle(
-      fontSize: 10,
-      color: AppColors.mainWhite
+      fontSize: 20,
+      color: AppColors.mainWhite,
+    );
+  }
+
+  static TextStyle get banner {
+    return TextStyle(
+        fontSize: 50,
+        color: AppColors.primaryColor,
+        fontWeight: FontWeight.bold,
+        fontFamily: 'Simplicity'
     );
   }
 

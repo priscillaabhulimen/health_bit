@@ -19,9 +19,9 @@ class HealthBitPageRoute {
     );
   }
 
-  static PageRouteBuilder<T> animateTo<T>(Widget nextScreen) {
+  static PageRouteBuilder<T> bounceAnimateTo<T>(Widget nextScreen) {
     return PageRouteBuilder(
-      transitionDuration: Duration(seconds: 2),
+      transitionDuration: Duration(seconds: 1),
       transitionsBuilder: (BuildContext context, Animation<double> animation,
           Animation<double> secAnimation, Widget child) {
         animation = CurvedAnimation(parent: animation, curve: Curves.bounceOut);
@@ -38,4 +38,24 @@ class HealthBitPageRoute {
         return nextScreen;
       });
   }
+  static PageRouteBuilder<T> slideAnimateTo<T>(Widget nextScreen) {
+    return PageRouteBuilder(
+        transitionDuration: Duration(seconds: 1),
+        transitionsBuilder: (BuildContext context, Animation<double> animation,
+            Animation<double> secAnimation, Widget child) {
+          animation = CurvedAnimation(parent: animation, curve: Curves.easeInOut);
+          return SlideTransition(
+            position: Tween<Offset>(
+              begin: Offset(-1, 0),
+              end: Offset.zero,
+            ).animate(animation),
+            child: child,
+          );
+        },
+        pageBuilder: (BuildContext context, Animation<double> animation,
+            Animation<double> secAnimation) {
+          return nextScreen;
+        });
+  }
+
 }
