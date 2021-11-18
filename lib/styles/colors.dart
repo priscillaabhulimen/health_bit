@@ -36,7 +36,7 @@ const MaterialColor purple = const MaterialColor(
 class AppColors {
   AppColors._();
 
-  static const Color primaryColor = Color(0xFF359E9E);
+  static const Color primaryColor = Color(0xFF357E7E);
   static const Color primaryLight = Color(0xFF5BBABB);
   static const Color mainBlack = Color(0xFF071414);
   static const Color mainTeal = Color(0xFF205C5C);

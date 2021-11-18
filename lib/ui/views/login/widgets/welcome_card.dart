@@ -214,10 +214,12 @@ class _WelcomeBoxState extends State<WelcomeBox> with TickerProviderStateMixin{
                     animController.reverse();
                     cont.reverse();
                     controller.reverse();
-                    Future.delayed(Duration(milliseconds: 500), (){
+                    Future.delayed(Duration(milliseconds: 1500), (){
                       Navigator.push(
                           context,
-                          HealthBitPageRoute.slideAnimateTo(MainPage())
+                          HealthBitPageRoute.routeTo(
+                              builder: (context) => MainPage()
+                          )
                       );
                     });
                   },

@@ -13,10 +13,18 @@ class AppTextStyles {
     );
   }
 
+  static TextStyle get cardLabelDark {
+    return TextStyle(
+        fontSize: 13.5,
+        fontFamily: 'Simplicity',
+        color: AppColors.mainTeal
+    );
+  }
+
   static TextStyle get cardLabel {
     return TextStyle(
         fontSize: 13.5,
-        fontWeight: FontWeight.w500,
+        fontFamily: 'Simplicity',
         color: AppColors.mainWhite
     );
   }
@@ -48,7 +56,8 @@ class AppTextStyles {
   static TextStyle get cta {
     return TextStyle(
       fontSize: 16,
-      color: AppColors.mainBlack,
+      fontWeight: FontWeight.bold,
+      color: AppColors.mainTeal,
     );
   }
 
@@ -56,6 +65,16 @@ class AppTextStyles {
     return TextStyle(
       fontSize: 20,
       color: AppColors.mainWhite,
+    );
+  }
+
+  static TextStyle get labelDark{
+    return TextStyle(
+      fontSize: 25,
+      color: AppColors.mainTeal,
+      fontFamily: 'Simplicity',
+      fontWeight: FontWeight.bold,
+      letterSpacing: 2
     );
   }
 
@@ -68,10 +87,19 @@ class AppTextStyles {
     );
   }
 
+  static TextStyle get bannerHighlight {
+    return TextStyle(
+        fontSize: 50,
+        color: AppColors.mainWhite,
+        fontWeight: FontWeight.bold,
+        fontFamily: 'Simplicity'
+    );
+  }
+
   static TextStyle get input {
     return TextStyle(
       fontSize: 14,
-      color: Colors.black,
+      color: AppColors.mainWhite,
     );
   }
 }

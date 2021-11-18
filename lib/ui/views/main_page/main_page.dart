@@ -41,6 +41,7 @@ class _MainPageState extends State<MainPage> {
               child: _children[_currentIndex]),
           bottomNavigationBar: Container(
             decoration: BoxDecoration(
+              color: AppColors.primaryLight,
               border: Border(
                 top: BorderSide(
                   color: Colors.white.withOpacity(.9),
@@ -72,7 +73,7 @@ class _MainPageState extends State<MainPage> {
                 ),
               ],
               currentIndex: _currentIndex,
-              type: BottomNavigationBarType.fixed,
+              type: BottomNavigationBarType.shifting,
               onTap: (int index){
                 setStateIfMounted(() {
                   _currentIndex = index;

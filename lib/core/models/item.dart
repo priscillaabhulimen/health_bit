@@ -5,6 +5,7 @@ class TrackItem{
   final Image activeImage;
   final Image inactiveImage;
   final String label;
+  final String description;
 
-  TrackItem({this.onTap, this.activeImage, this.inactiveImage, this.label});
+  TrackItem({this.description, this.onTap, this.activeImage, this.inactiveImage, this.label});
 }
