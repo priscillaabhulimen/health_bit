@@ -151,24 +151,22 @@ class _TrackViewState extends State<TrackView> with TickerProviderStateMixin{
                   bottom: 0,
                   child: Container(
                     height: size.height/1.8,
-                    width: size.width - 20,
-                    margin: EdgeInsets.symmetric(horizontal: 10),
-                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    width: size.width,
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 12),
                     decoration: BoxDecoration(
-                      color: AppColors.mainWhite,
+                      color: AppColors.mainWhite.withOpacity(0.6),
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(25),
                         topRight: Radius.circular(25)
                       )
                     ),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           'What would you like to record?',
                           style: AppTextStyles.appBar,
                         ),
-                        SizedBox(height: 20,),
                         CarouselSlider(
                           items: model.items.asMap().entries.map((e) {
                             return GestureDetector(
@@ -202,7 +200,6 @@ class _TrackViewState extends State<TrackView> with TickerProviderStateMixin{
                               }
                           ),
                         ),
-                        SizedBox(height: 20,),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: model.items.asMap().entries.map((e){
@@ -216,10 +213,16 @@ class _TrackViewState extends State<TrackView> with TickerProviderStateMixin{
                                 ));
                           }).toList(),
                         ),
-                        SizedBox(height: 20,),
                         Text(
                           model.items[model.current].label,
                           style: AppTextStyles.labelDark,
+                        ),
+                        Flexible(
+                          child: Text(
+                            model.items[model.current].description,
+                            style: AppTextStyles.cardLabelDark,
+                            overflow: TextOverflow.fade,
+                          ),
                         )
                       ],
                     ),
