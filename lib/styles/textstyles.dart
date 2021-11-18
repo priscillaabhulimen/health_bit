@@ -17,7 +17,16 @@ class AppTextStyles {
     return TextStyle(
         fontSize: 13.5,
         fontWeight: FontWeight.w500,
-        color: AppColors.mainTeal
+        color: AppColors.mainWhite
+    );
+  }
+
+  static TextStyle get appBar{
+    return TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: AppColors.mainTeal,
+        fontFamily: 'Simplicity'
     );
   }
 
