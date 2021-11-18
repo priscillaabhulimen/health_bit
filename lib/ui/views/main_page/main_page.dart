@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:health_bit/core/providers/user_provider.dart';
+import 'package:health_bit/styles/colors.dart';
+import 'package:health_bit/ui/views/track/track_view.dart';
 import 'package:health_bit/utils/health_bit_modal_helpers.dart';
 import 'package:health_bit/widgets/confirm_back_tap.dart';
 import 'package:provider/provider.dart';
@@ -28,7 +30,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     List<Widget> _children = [
-      Container(height: size.height,),
+      TrackView(),
       Container(height: size.height,),
     ];
     return Consumer<UserProvider>(
@@ -172,7 +174,7 @@ class ActiveItem extends StatelessWidget {
                 title,
                 style: TextStyle(
                     fontSize: textFontSize,
-                    color: Colors.black,
+                    color: AppColors.mainBlack,
                     fontWeight: FontWeight.w500),
               )),
         )

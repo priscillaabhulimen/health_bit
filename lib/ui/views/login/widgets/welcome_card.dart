@@ -11,7 +11,8 @@ import 'package:health_bit/utils/health_bit_page_route.dart';
 import 'package:health_bit/values/images.dart';
 
 class WelcomeBox extends StatefulWidget {
-  const WelcomeBox({Key key}) : super(key: key);
+  final ImageProvider background;
+  const WelcomeBox({Key key, this.background}) : super(key: key);
 
   @override
   _WelcomeBoxState createState() => _WelcomeBoxState();
@@ -27,14 +28,12 @@ class _WelcomeBoxState extends State<WelcomeBox> with TickerProviderStateMixin{
 
   Image imageLogo;
   Image imageGuide;
-  Image background;
 
   @override
   void initState() {
     super.initState();
     imageGuide = Image.asset('assets/images/tour_guide.png');
     imageLogo = Image.asset(AppImages.healthBitLogo);
-    background = Image.asset('assets/images/background.jpg');
 
     controller = AnimationController(
       duration: Duration(
@@ -71,7 +70,6 @@ class _WelcomeBoxState extends State<WelcomeBox> with TickerProviderStateMixin{
 
     precacheImage(imageLogo.image, context);
     precacheImage(imageGuide.image, context);
-    precacheImage(background.image, context);
   }
 
   @override
@@ -89,7 +87,7 @@ class _WelcomeBoxState extends State<WelcomeBox> with TickerProviderStateMixin{
       alignment: Alignment.bottomCenter,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: background.image,
+          image: widget.background,
           fit: BoxFit.cover,
         )
       ),

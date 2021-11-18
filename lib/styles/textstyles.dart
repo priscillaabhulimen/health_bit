@@ -5,11 +5,19 @@ import 'package:health_bit/styles/colors.dart';
 class AppTextStyles {
   AppTextStyles._();
 
-  static TextStyle get cardLabel {
+  static TextStyle get cardLabelHighlight {
     return TextStyle(
       fontSize: 13.5,
       fontWeight: FontWeight.w500,
       color: AppColors.mainWhite
+    );
+  }
+
+  static TextStyle get cardLabel {
+    return TextStyle(
+        fontSize: 13.5,
+        fontWeight: FontWeight.w500,
+        color: AppColors.mainTeal
     );
   }
 

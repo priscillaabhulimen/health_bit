@@ -15,6 +15,21 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  Image background;
+
+  @override
+  void initState() {
+    super.initState();
+    background = Image.asset('assets/images/background.jpg');
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    precacheImage(background.image, context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return BaseView<LoginViewModel>(
@@ -27,7 +42,7 @@ class _LoginViewState extends State<LoginView> {
             message: 'Press back again to exit',
             child: Stack(
               children: [
-                model.isWelcome ? WelcomeBox() : SizedBox(),
+                model.isWelcome ? WelcomeBox(background: background.image,) : SizedBox(),
               ],
             ),
           ),
